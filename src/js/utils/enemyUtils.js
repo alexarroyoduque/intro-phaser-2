@@ -17,9 +17,9 @@ enemyUtils.setupHelicopter = function (enemy) {
     enemy.body.collideWorldBounds = true;
     enemy.body.setSize(50, 45);
     enemy.anchor.setTo(0.5, 0.5);
-    // enemy.body.immovable = true;
+    enemy.body.immovable = true;
     enemy.body.allowGravity = false;
-    enemy.health = 3;
+    enemy.health = 4;
     enemy.points = 20;
     enemy.shootTime = 1000;
     enemy.animations.play('default');

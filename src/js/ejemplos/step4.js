@@ -16,7 +16,7 @@
             utils.createLevel(this, 'tilemap2');
 
             // buttons
-            interfaceUtils.createGameButtons(this, 'demo');
+            interfaceUtils.createGameButtons(this);
 
             // player
             playerUtils.generatePlayer(100, 20, this);

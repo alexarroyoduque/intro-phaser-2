@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
     game.state.add('menu', ns.Menu);
     game.state.add('game', ns.Game);
     /* yo phaser:state new-state-files-put-here */
-    game.state.add('demo', ns.Demo);
+    game.state.add('chapter1', ns.Chapter1);
     game.state.add('step1', ns.Step1);
     game.state.add('step2', ns.Step2);
     game.state.add('step3', ns.Step3);

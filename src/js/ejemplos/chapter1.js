@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-    function Demo() {}
+    function Chapter1() {}
 
-    Demo.prototype = {
+    Chapter1.prototype = {
 
         create: function() {
             this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -106,7 +106,7 @@
                 var stateName = this[1],
                     context = this[0];
                 context.game.state.start(stateName);
-            }, [this, 'demo'], 3, 2, 3));
+            }, [this, 'chapter1'], 3, 2, 3));
 
             this.buttons.getAt(0).fixedToCamera = true;
             this.buttons.getAt(1).fixedToCamera = true;
@@ -183,5 +183,5 @@
     };
 
     window['intro-phaser-2'] = window['intro-phaser-2'] || {};
-    window['intro-phaser-2'].Demo = Demo;
+    window['intro-phaser-2'].Chapter1 = Chapter1;
 }());

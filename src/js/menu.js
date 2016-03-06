@@ -30,7 +30,7 @@
       this.buttons = this.game.add.group();
       this.texts = this.game.add.group();
 
-      this.buttons.add(this.game.add.button(centerX - 150, 100, 'button', this.goTo, [this, 'demo'], 1, 0, 1));
+      this.buttons.add(this.game.add.button(centerX - 150, 100, 'button', this.goTo, [this, 'chapter1'], 1, 0, 1));
       this.texts.add(this.game.add.text(centerX - 150, 100, 'Resultado: intro 1', textStyle));
       this.buttons.add(this.game.add.button(centerX - 150, 200, 'button', this.goTo, [this, 'step1'], 1, 0, 1));
       this.texts.add(this.game.add.text(centerX - 150, 200, 'Refactor', textStyle));
