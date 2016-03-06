@@ -19,7 +19,7 @@ Es necesario tener instalado:
 
 ##Arrancar proyecto
 
-1. Clonar repositorio, también es posible descargarlo en .[zip](https://github.com/alejandroarroyo/intro-phase-2r/archive/master.zip)
+1. Clonar repositorio, también es posible descargarlo en .[zip](https://github.com/alejandroarroyo/intro-phase-2/archive/master.zip)
     
     + `git clone https://github.com/alejandroarroyo/intro-phaser-2`
 
@@ -32,8 +32,6 @@ Es necesario tener instalado:
     + Bower: `bower install`
     
 3. Arrancar con gulp: `gulp`
-
-4. En el navegador ir a  [http://localhost:9000](http://localhost:9000)
 
 > Alejandro Arroyo Duque
 

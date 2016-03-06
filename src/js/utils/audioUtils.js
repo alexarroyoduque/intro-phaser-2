@@ -1,8 +1,10 @@
 var audioUtils = {};
 
-audioUtils.addAudio = function(gameContext, musicLevelKey) {
+audioUtils.addAudio = function(gameContext, musicLevelKey, playMusic) {
     gameContext.game.sound.stopAll();
     gameContext.music = gameContext.game.add.audio(musicLevelKey);
     gameContext.shootSound = gameContext.game.add.audio('shootSound');
-    gameContext.music.play('', 0, 1, true);
+    if (playMusic) {
+        gameContext.music.play('', 0, 1, true);
+    }
 };

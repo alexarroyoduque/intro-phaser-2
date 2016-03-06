@@ -1,20 +1,22 @@
 (function() {
     'use strict';
 
-    function Step2() {}
+    function Step4() {}
 
-    Step2.prototype = {
+    Step4.prototype = {
 
         create: function() {
             utils.generateGameVars(this);
-            utils.setupWorld(this, 'sky');
+            utils.setupWorld(this, 'sky-mist');
+            utils.setupMistScenario(this);
             audioUtils.addAudio(this, 'music');
+            utils.createScore(this);
 
             // map
-            utils.createLevel(this, 'tilemap1');
+            utils.createLevel(this, 'tilemap2');
 
             // buttons
-            interfaceUtils.createGameButtons(this);
+            interfaceUtils.createGameButtons(this, 'demo');
 
             // player
             playerUtils.generatePlayer(100, 20, this);
@@ -28,20 +30,27 @@
             // enemies
             // abul-abbas
             this.abuls = this.game.add.group();
-            this.abuls.create(460, 390, 'abul');
-            this.abuls.create(720, 180, 'abul');
-            this.abuls.create(880, 530, 'abul');
-            this.abuls.create(750, 530, 'abul');
-            this.abuls.create(1220, 340, 'abul');
-            this.abuls.create(1190, 400, 'abul');
-            this.abuls.create(1440, 420, 'abul');
-            this.abuls.create(1600, 420, 'abul');
-            this.abuls.create(1500, 530, 'abul');
-            this.abuls.create(1720, 530, 'abul');
+            this.abuls.create(350, 390, 'abul');
+            this.abuls.create(630, 390, 'abul');
+            this.abuls.create(700, 340, 'abul');
+            this.abuls.create(730, 390, 'abul');
+            this.abuls.create(830, 190, 'abul');
+            this.abuls.create(950, 315, 'abul');
+            this.abuls.create(1060, 150, 'abul');
+            this.abuls.create(1250, 390, 'abul');
+            this.abuls.create(1420, 260, 'abul');
+            this.abuls.create(1600, 190, 'abul');
+            this.abuls.create(1670, 190, 'abul');
+            this.abuls.create(1900, 190, 'abul');
+            this.abuls.create(1375, 390, 'abul');
+            this.abuls.create(1580, 390, 'abul');
+            this.abuls.create(1700, 390, 'abul');
             this.abuls.forEach(enemyUtils.setupAbul, this);
         },
 
         update: function() {
+            utils.updateMistParallax(this);
+
             collisions.checkPlayerCollisions(this);
             collisions.checkAbulCollisions(this);
             collisions.checkParticlesCollisions(this);
@@ -57,5 +66,5 @@
     };
 
     window['intro-phaser-2'] = window['intro-phaser-2'] || {};
-    window['intro-phaser-2'].Step2 = Step2;
+    window['intro-phaser-2'].Step4 = Step4;
 }());

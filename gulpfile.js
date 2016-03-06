@@ -6,13 +6,13 @@ var gulp = require('gulp')
   , minifycss = require('gulp-minify-css')
   , minifyhtml = require('gulp-minify-html')
   , processhtml = require('gulp-processhtml')
-  , jshint = require('gulp-jshint')
+  //, jshint = require('gulp-jshint')
   , uglify = require('gulp-uglify')
   , connect = require('gulp-connect')
   , paths;
 
 paths = {
-  assets: 'src/assets/**/*',
+  assets: ['src/assets/**/*', '!src/assets/**/*.psd', '!src/assets/**/*.mp3'],
   css:    'src/css/*.css',
   libs:   [
     'src/bower_components/phaser-official/build/custom/phaser-arcade-physics.min.js'
@@ -37,7 +37,7 @@ gulp.task('copy-vendor', ['clean'], function () {
     .on('error', gutil.log);
 });
 
-gulp.task('uglify', ['clean','lint'], function () {
+gulp.task('uglify', ['clean'], function () {
   gulp.src(paths.js)
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest(paths.dist))
@@ -92,7 +92,7 @@ gulp.task('connect', function () {
 });
 
 gulp.task('watch', function () {
-  //gulp.watch(paths.js, ['lint']);
+  // gulp.watch(paths.js, ['lint']);
   gulp.watch(['./src/index.html', paths.css, paths.js], ['html']);
 });
 

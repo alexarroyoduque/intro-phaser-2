@@ -101,12 +101,12 @@
                 var stateName = this[1],
                     context = this[0];
                 context.game.state.start(stateName);
-            }, [this, 'menu'], 2, 0, 2));
+            }, [this, 'menu'], 1, 0, 1));
             this.buttons.add(this.game.add.button(70, 20, 'button2', function () {
                 var stateName = this[1],
                     context = this[0];
                 context.game.state.start(stateName);
-            }, [this, 'demo'], 3, 1, 3));
+            }, [this, 'demo'], 3, 2, 3));
 
             this.buttons.getAt(0).fixedToCamera = true;
             this.buttons.getAt(1).fixedToCamera = true;

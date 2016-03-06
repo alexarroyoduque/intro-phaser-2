@@ -7,14 +7,14 @@
 
         create: function() {
             utils.generateGameVars(this);
-            utils.setupWorld(this);
+            utils.setupWorld(this, 'sky');
             audioUtils.addAudio(this, 'music');
-
-            // buttons
-            interfaceUtils.createGameButtons(this, 'demo');
 
             // map
             utils.createLevel(this, 'tilemap1');
+
+            // buttons
+            interfaceUtils.createGameButtons(this, 'demo');
 
             // player
             playerUtils.generatePlayer(100, 20, this);
@@ -38,7 +38,8 @@
         },
 
         update: function() {
-            collisions.checkGameCollisions(this);
+            collisions.checkPlayerCollisions(this);
+            collisions.checkAbulCollisions(this);
             enemyUtils.abulsAttack(this);
 
             playerUtils.playerActions(this);
